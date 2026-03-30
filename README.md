@@ -54,7 +54,7 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M5-1 | UE5 C++ 기초 | AActor / * UActorComponent 구조<br>* UPROPERTY / UFUNCTION 매크로<br>* Tick & 물리 시뮬레이션<br>* Blueprint ↔ C++ 혼용 패턴 |
+| M5-1 | UE5 C++ 기초 | * AActor / UActorComponent 구조<br>* UPROPERTY / UFUNCTION 매크로<br>* Tick & 물리 시뮬레이션<br>* Blueprint ↔ C++ 혼용 패턴 |
 | M5-2 | rclUE & ROS 2 브리지 | * rclUE 플러그인 빌드 & 설정<br>* Topic / Service / Action 연동<br>* TB3 URDF → UE5 스켈레탈 메시<br>* 센서 시뮬 (LiDAR · 카메라 렌더) |
 | M5-3 | 고품질 디지털 트윈 | * Lumen GI / Nanite 설정<br>* 실환경 3D 스캔 임포트 (RealityCapture)<br>* 합성 학습 데이터 대량 생성<br>* 실시간 로봇 상태 시각화 |
 | M5-4 | UE5 멀티로봇 시각화 | * 다중 에이전트 상태 동기화<br>* Fleet 관제 HUD 설계<br>* 이벤트 기반 알림 시스템<br>* WebSocket ↔ ROS 2 브리지 |
