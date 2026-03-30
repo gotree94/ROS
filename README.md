@@ -11,8 +11,8 @@
 | Module | Topic | Details |
 |--------|------|--------|
 | M1-1 | Arduino 심화 & 펌웨어 | * 인터럽트 / 타이머 / DMA 개념<br> * FreeRTOS 태스크 구조<br>* 커스텀 UART 프로토콜 설계<br> * OpenCR 펌웨어 분석 & 수정 |
-| M1-2 | 통신 프로토콜 실습 | I2C/SPI 멀티 센서 버스 설계<br>CAN 통신 개념 (산업 로봇 연계)<br>Bluetooth / Wi-Fi 모듈 연동<br>패킷 구조 설계 & CRC 검증 |
-| M1-3 | Raspberry Pi 심화 | Device Tree / GPIO IRQ<br>V4L2 카메라 드라이버 커스텀<br>실시간 커널 패치 (RT-PREEMPT)<br>Docker 기반 ROS 2 환경 격리 |
+| M1-2 | 통신 프로토콜 실습 | * I2C/SPI 멀티 센서 버스 설계<br>* CAN 통신 개념 (산업 로봇 연계)<br>* Bluetooth / Wi-Fi 모듈 연동<br>* 패킷 구조 설계 & CRC 검증 |
+| M1-3 | Raspberry Pi 심화 | * Device Tree / GPIO IRQ<br>* V4L2 카메라 드라이버 커스텀<br>* 실시간 커널 패치 (RT-PREEMPT)<br>Docker 기반 ROS 2 환경 격리 |
 
 ---
 
