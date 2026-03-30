@@ -20,11 +20,11 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M2-1 | ROS 2 아키텍처 & DDS | DDS (Fast-DDS / Cyclone DDS) 설정<br>QoS 정책 설계 (Reliability, Durability)<br>Executor / callback group 최적화<br>Lifecycle Node & 상태 관리 |
-| M2-2 | C++ 노드 개발 | rclcpp 심화: 타이머 / 파라미터<br>커스텀 msg / srv / action 정의<br>Composable Node & intra-process<br>ROS 2 시간 동기화 (use_sim_time) |
-| M2-3 | TF2 & 센서 통합 | 정적/동적 TF 브로드캐스터<br>URDF / Xacro 로봇 모델링<br>sensor_msgs 완전 활용<br>robot_state_publisher 구성 |
-| M2-4 | Nav2 고급 설정 | 커스텀 플래너 / 컨트롤러 플러그인<br>behavior_tree_cpp v4 설계<br>Dynamic waypoint following<br>Costmap2D 레이어 커스터마이징 |
-| M2-5 | SLAM & 위치 추정 | SLAM Toolbox lifetime mapping<br>AMCL / EKFB pose estimation<br>3D LiDAR 기초 (HDL/NDT SLAM)<br>Localization 정밀도 튜닝 |
+| M2-1 | ROS 2 아키텍처 & DDS | DDS (Fast-DDS / Cyclone DDS) 설정<br>* QoS 정책 설계 (Reliability, Durability)<br>* Executor / callback group 최적화<br>* Lifecycle Node & 상태 관리 |
+| M2-2 | C++ 노드 개발 | rclcpp 심화: 타이머 / 파라미터<br>* 커스텀 msg / srv / action 정의<br>* Composable Node & intra-process<br>* ROS 2 시간 동기화 (use_sim_time) |
+| M2-3 | TF2 & 센서 통합 | 정적/동적 TF 브로드캐스터<br>* URDF / Xacro 로봇 모델링<br>* sensor_msgs 완전 활용<br>* robot_state_publisher 구성 |
+| M2-4 | Nav2 고급 설정 | 커스텀 플래너 / 컨트롤러 플러그인<br>* behavior_tree_cpp v4 설계<br>* Dynamic waypoint following<br>* Costmap2D 레이어 커스터마이징 |
+| M2-5 | SLAM & 위치 추정 | SLAM Toolbox lifetime mapping<br>* AMCL / EKFB pose estimation<br>* 3D LiDAR 기초 (HDL/NDT SLAM)<br>* Localization 정밀도 튜닝 |
 
 ---
 
@@ -32,10 +32,10 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M3-1 | OpenCV & 비전 파이프라인 | 카메라 캘리브레이션 (체스보드)<br>ArUco / AprilTag 마커 인식<br>깊이 추정 & 스테레오 비전<br>image_pipeline ROS 2 통합 |
-| M3-2 | YOLOv8 & 객체 탐지 | YOLOv8 커스텀 학습 파이프라인<br>TensorRT / ONNX 최적화<br>ROS 2 vision_msgs 통합<br>RPi5 NPU 추론 가속 |
-| M3-3 | 의미론적 내비게이션 | 객체 인식 → 목적지 결정<br>의미 지도 (semantic map) 구축<br>open_clip 이미지-언어 매칭<br>LLM 명령어 → ROS 2 action |
-| M3-4 | 데이터셋 & 학습 환경 | 시뮬 합성 데이터 생성 자동화<br>38가지 이미지 증강 파이프라인<br>Roboflow / Label Studio 연동<br>지속 학습 (Continual Learning) 개요 |
+| M3-1 | OpenCV & 비전 파이프라인 | 카메라 캘리브레이션 (체스보드)<br>* ArUco / AprilTag 마커 인식<br>* 깊이 추정 & 스테레오 비전<br>* image_pipeline ROS 2 통합 |
+| M3-2 | YOLOv8 & 객체 탐지 | YOLOv8 커스텀 학습 파이프라인<br>* TensorRT / ONNX 최적화<br>* ROS 2 vision_msgs 통합<br>* RPi5 NPU 추론 가속 |
+| M3-3 | 의미론적 내비게이션 | 객체 인식 → 목적지 결정<br>* 의미 지도 (semantic map) 구축<br>* open_clip 이미지-언어 매칭<br>* LLM 명령어 → ROS 2 action |
+| M3-4 | 데이터셋 & 학습 환경 | 시뮬 합성 데이터 생성 자동화<br>* 38가지 이미지 증강 파이프라인<br>* Roboflow / Label Studio 연동<br>* 지속 학습 (Continual Learning) 개요 |
 
 ---
 
@@ -43,10 +43,10 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M4-1 | Gazebo 고급 환경 구축 | SDF v1.9 완전 정복<br>PBR 재질 / 광원 설정<br>복잡 지형 (계단 · 경사 · 문)<br>물리 엔진 튜닝 (DART / Bullet) |
-| M4-2 | ros2_control & 하드웨어 추상화 | HardwareInterface 커스텀 작성<br>diff_drive_controller 심화<br>MoveIt 2 기초 연동<br>시뮬 → 실물 파라미터 이전 |
-| M4-3 | 강화학습 환경 (Sim2Real) | gym_ros2 / IsaacGym 개요<br>PPO 기반 이동 정책 학습<br>도메인 랜덤화 자동화<br>실물 전이 검증 절차 |
-| M4-4 | 다중 로봇 Gazebo 시뮬 | 5-TB3 동시 시뮬레이션<br>collision avoidance 벤치마크<br>분산 맵 병합 (map_merge_3d)<br>시뮬 성능 프로파일링 |
+| M4-1 | Gazebo 고급 환경 구축 | SDF v1.9 완전 정복<br>* PBR 재질 / 광원 설정<br>* 복잡 지형 (계단 · 경사 · 문)<br>* 물리 엔진 튜닝 (DART / Bullet) |
+| M4-2 | ros2_control & 하드웨어 추상화 | HardwareInterface 커스텀 작성<br>* diff_drive_controller 심화<br>* MoveIt 2 기초 연동<br>* 시뮬 → 실물 파라미터 이전 |
+| M4-3 | 강화학습 환경 (Sim2Real) | gym_ros2 / IsaacGym 개요<br>* PPO 기반 이동 정책 학습<br>* 도메인 랜덤화 자동화<br>* 실물 전이 검증 절차 |
+| M4-4 | 다중 로봇 Gazebo 시뮬 | 5-TB3 동시 시뮬레이션<br>* collision avoidance 벤치마크<br>* 분산 맵 병합 (map_merge_3d)<br>* 시뮬 성능 프로파일링 |
 
 ---
 
@@ -54,10 +54,10 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M5-1 | UE5 C++ 기초 | AActor / UActorComponent 구조<br>UPROPERTY / UFUNCTION 매크로<br>Tick & 물리 시뮬레이션<br>Blueprint ↔ C++ 혼용 패턴 |
-| M5-2 | rclUE & ROS 2 브리지 | rclUE 플러그인 빌드 & 설정<br>Topic / Service / Action 연동<br>TB3 URDF → UE5 스켈레탈 메시<br>센서 시뮬 (LiDAR · 카메라 렌더) |
-| M5-3 | 고품질 디지털 트윈 | Lumen GI / Nanite 설정<br>실환경 3D 스캔 임포트 (RealityCapture)<br>합성 학습 데이터 대량 생성<br>실시간 로봇 상태 시각화 |
-| M5-4 | UE5 멀티로봇 시각화 | 다중 에이전트 상태 동기화<br>Fleet 관제 HUD 설계<br>이벤트 기반 알림 시스템<br>WebSocket ↔ ROS 2 브리지 |
+| M5-1 | UE5 C++ 기초 | AActor / UActorComponent 구조<br>* UPROPERTY / UFUNCTION 매크로<br>* Tick & 물리 시뮬레이션<br>* Blueprint ↔ C++ 혼용 패턴 |
+| M5-2 | rclUE & ROS 2 브리지 | rclUE 플러그인 빌드 & 설정<br>* Topic / Service / Action 연동<br>* TB3 URDF → UE5 스켈레탈 메시<br>* 센서 시뮬 (LiDAR · 카메라 렌더) |
+| M5-3 | 고품질 디지털 트윈 | Lumen GI / Nanite 설정<br>* 실환경 3D 스캔 임포트 (RealityCapture)<br>* 합성 학습 데이터 대량 생성<br>* 실시간 로봇 상태 시각화 |
+| M5-4 | UE5 멀티로봇 시각화 | 다중 에이전트 상태 동기화<br>* Fleet 관제 HUD 설계<br>* 이벤트 기반 알림 시스템<br>* WebSocket ↔ ROS 2 브리지 |
 
 ---
 
@@ -65,9 +65,9 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M6-1 | 멀티에이전트 ROS 2 | ROS 2 namespace & domain 분리<br>중앙 조율 노드 아키텍처<br>Task allocation (경매 알고리즘)<br>Fleet management (Open-RMF 개요) |
-| M6-2 | 분산 SLAM & 지도 공유 | 로봇 간 지도 공유 프로토콜<br>맵 병합 & 일관성 유지<br>공유 Costmap 설계<br>통신 지연 보상 기법 |
-| M6-3 | 산업 인터페이스 연동 | MQTT / OPC-UA 브리지<br>PLC ↔ ROS 2 통신<br>스마트 팩토리 시나리오 설계<br>안전 기능 (e-stop, watchdog) |
+| M6-1 | 멀티에이전트 ROS 2 | ROS 2 namespace & domain 분리<br>* 중앙 조율 노드 아키텍처<br>* Task allocation (경매 알고리즘)<br>* Fleet management (Open-RMF 개요) |
+| M6-2 | 분산 SLAM & 지도 공유 | 로봇 간 지도 공유 프로토콜<br>* 맵 병합 & 일관성 유지<br>* 공유 Costmap 설계<br>* 통신 지연 보상 기법 |
+| M6-3 | 산업 인터페이스 연동 | MQTT / OPC-UA 브리지<br>* PLC ↔ ROS 2 통신<br>* 스마트 팩토리 시나리오 설계<br>* 안전 기능 (e-stop, watchdog) |
 
 ---
 
@@ -75,8 +75,8 @@
 
 | Module | Topic | Details |
 |--------|------|--------|
-| M7-1 | 팀 시스템 통합 | 전체 스택 통합 디버깅<br>실제 TB3 + UE5 동시 데모<br>성능 벤치마크 & 튜닝<br>장애 대응 시나리오 테스트 |
-| M7-2 | 포트폴리오 완성 | GitHub README 전문 작성<br>데모 영상 편집 & 업로드<br>기술 블로그 포스트 작성<br>최종 발표 (15분 + Q&A) |
+| M7-1 | 팀 시스템 통합 | 전체 스택 통합 디버깅<br>* 실제 TB3 + UE5 동시 데모<br>* 성능 벤치마크 & 튜닝<br>* 장애 대응 시나리오 테스트 |
+| M7-2 | 포트폴리오 완성 | GitHub README 전문 작성<br>* 데모 영상 편집 & 업로드<br>* 기술 블로그 포스트 작성<br>* 최종 발표 (15분 + Q&A) |
 
 ## 주차별 상세(24주)
 
