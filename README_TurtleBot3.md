@@ -12,7 +12,8 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
 ### 1. 가장 안정적인 추천 조합 (골든 셋업)
 * 현재 가장 광범위하게 검증되었으며, 커뮤니티 지원과 튜토리얼이 가장 풍부한 조합입니다.
-| 구분	| 추천 사양	| 비고|
+
+| 구분	| 추천 사양	| 비고 |
 | :-----:| :-----:| :-----:| 
 | SBC (하드웨어)	| Raspberry Pi 4 (4GB 이상)	| Pi 3B+는 메모리 부족으로 Humble 구동 시 불안정할 수 있음 | 
 | OS	| Ubuntu 22.04.x LTS (64-bit)	| Desktop 버전보다 Server 버전 설치 후 필요한 패키지만 구성 권장 | 
