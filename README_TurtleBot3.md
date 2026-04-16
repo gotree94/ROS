@@ -29,7 +29,8 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
    * Jazzy (ROS 2):
       * 가장 최신 버전이지만, 아직 터틀봇3의 하드웨어 드라이버나 turtlebot3_simulations 패키지 등에서 미세한 버그가 보고되기도 합니다. 
       * 특히 튜토리얼의 문법 체계가 Humble과 달라 초보자가 참고 자료를 찾기 어렵습니다.
-   * Humble: ROBOTIS 공식 매뉴얼이 가장 완벽하게 대응하며, OpenCR과의 펌웨어 호환성이 가장 높습니다.
+   * Humble:
+      * ROBOTIS 공식 매뉴얼이 가장 완벽하게 대응하며, OpenCR과의 펌웨어 호환성이 가장 높습니다.
 
 -----
 
