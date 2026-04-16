@@ -82,6 +82,23 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 | Autonomous Driving | ✓ | ✓ | ✓ | 차선 인식 등 Jazzy 포팅 완료 |
 | Machine Learning | X | △ | O | ROS 2 전용 ML 패키지 연동 |
 
+💡 주요 변경 사항 및 설치 가이드
+   * 1. ROS 2 Jazzy Jalisco (Ubuntu 24.04)
+      •	현재 상황: 2026년 기준, 터틀봇3의 가장 표준이 되는 최신 버전입니다.
+      •	특징: 이미지 속 "Soon" 단계에서 벗어나 **Manipulation(매니퓰레이션)**과 Machine Learning(기계 학습) 예제들이 공식 지원됩니다. 특히 Docker 컨테이너를 통한 배포가 안정화되어 라즈베리 파이 5에서도 원활하게 구동됩니다.
+   * 2. ROS 2 Humble Hawksbill (Ubuntu 22.04)
+      •	현재 상황: 가장 견고한 LTS(Long Term Support) 버전입니다.
+      •	특징: 기업이나 연구실에서 '절대 안 죽는 환경'을 원할 때 여전히 1순위로 선택됩니다. 대부분의 시뮬레이션 환경이 이 버전에 최적화되어 있습니다.
+   * 3. ROS 1 Noetic (지원 종료 알림)
+      •	주의: 2025년 5월부로 공식 지원이 종료되었습니다. Home Service Challenge와 같은 과거의 특정 대회용 소스코드가 꼭 필요한 경우가 아니라면, 신규 설치 시에는 고려하지 않는 것이 좋습니다.
+
+🛠️ 추천 환경 (Best Practice)
+   * 만약 지금 라즈베리 파이에 새로 설치하신다면 아래 조합을 강력 추천합니다.
+      •	하드웨어: Raspberry Pi 4 (4GB/8GB) 또는 Raspberry Pi 5
+      •	OS: Ubuntu 24.04 LTS (64-bit)
+      •	ROS 버전: ROS 2 Jazzy (Docker 활용 시 호환성 문제 해결이 가장 쉬움)
+
+
 📋 기호별 의미 및 상태 설명
 | 기호 | 의미 | 상태 설명 | 
 |:-------:|:-------:|:-------:| 
@@ -89,20 +106,14 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 | $\triangle$ | 부분 지원 (Partial / Beta) | 기본 기능은 동작하지만 일부 고급 기능이 빠져 있거나, 공식 배포판(Binary)이 아닌 소스 코드를 직접 빌드하여 사용해야 하는 '베타' 상태를 의미합니다.| 
 | $\text{X}$ |  지원 불가 (Not Supported) | 해당 환경에서 구동하기 위한 패키지가 개발되지 않았거나, 의존성 문제로 인해 설치 및 실행이 불가능한 상태입니다.| 
 
-💡 주요 변경 사항 및 설치 가이드
-1. ROS 2 Jazzy Jalisco (Ubuntu 24.04)
-•	현재 상황: 2026년 기준, 터틀봇3의 가장 표준이 되는 최신 버전입니다.
-•	특징: 이미지 속 "Soon" 단계에서 벗어나 **Manipulation(매니퓰레이션)**과 Machine Learning(기계 학습) 예제들이 공식 지원됩니다. 특히 Docker 컨테이너를 통한 배포가 안정화되어 라즈베리 파이 5에서도 원활하게 구동됩니다.
-2. ROS 2 Humble Hawksbill (Ubuntu 22.04)
-•	현재 상황: 가장 견고한 LTS(Long Term Support) 버전입니다.
-•	특징: 기업이나 연구실에서 '절대 안 죽는 환경'을 원할 때 여전히 1순위로 선택됩니다. 대부분의 시뮬레이션 환경이 이 버전에 최적화되어 있습니다.
-3. ROS 1 Noetic (지원 종료 알림)
-•	주의: 2025년 5월부로 공식 지원이 종료되었습니다. Home Service Challenge와 같은 과거의 특정 대회용 소스코드가 꼭 필요한 경우가 아니라면, 신규 설치 시에는 고려하지 않는 것이 좋습니다.
-🛠️ 추천 환경 (Best Practice)
-만약 지금 라즈베리 파이에 새로 설치하신다면 아래 조합을 강력 추천합니다.
-•	하드웨어: Raspberry Pi 4 (4GB/8GB) 또는 Raspberry Pi 5
-•	OS: Ubuntu 24.04 LTS (64-bit)
-•	ROS 버전: ROS 2 Jazzy (Docker 활용 시 호환성 문제 해결이 가장 쉬움)
+🔍 주요 항목별 부연 설명
+   * $\text{O}$ (Machine Learning - Jazzy):
+      * 기존에는 ROS 2에서 ML 패키지 연동이 까다로웠으나, Jazzy 버전에서는 micro-ROS와 TensorFlow Lite 등의 연동 예제가 공식화되어 '지원($\text{O}$)'으로 표시했습니다.
+   * $\triangle$ (Home Service Challenge - Humble):
+      * 이 기능은 ROS 1 Noetic에 최적화된 시나리오입니다. Humble에서도 구동은 가능하지만, 사용자가 직접 맵과 명령 체계를 ROS 2용으로 컨버팅해야 하는 번거로움이 있어 '부분 지원'으로 분류됩니다.
+   * $\text{X}$ (Manipulation - Jazzy 초기 단계):
+      * 질문하신 시점의 최신 상태에 따라 다르지만, 일반적으로 최신 OS가 나오면 하드웨어 제어 라이브러리(Dynamixel SDK 등)가 포팅되는 데 시간이 걸립니다. 현재는 개발이 완료되어 $\text{O}$로 넘어가고 있는 추세입니다.
+
 
 ----
 
