@@ -61,3 +61,9 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
       네이티브 설치는 아직 라이브러리 의존성 문제가 발생할 확률이 높습니다.
 
 -----
+
+<img src="rp4-ros-install\rp4-ros-install_003.png"> <br>
+<img src="rp4-ros-install\rp4-ros-install_004.png"> <br>
+<img src="rp4-ros-install\rp4-ros-install_005.png"> <br>
+<img src="rp4-ros-install\rp4-ros-install_006.png"> <br>
+
