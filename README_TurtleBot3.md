@@ -64,6 +64,22 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
 * rp4ros-nwk
 
+```
+PS C:\Users\Administrator> ping rp4ros-nwk.local -4
+
+Ping rp4ros-nwk.local [192.168.0.28] 32바이트 데이터 사용:
+192.168.0.28의 응답: 바이트=32 시간=2ms TTL=64
+192.168.0.28의 응답: 바이트=32 시간=2ms TTL=64
+192.168.0.28의 응답: 바이트=32 시간=2ms TTL=64
+192.168.0.28의 응답: 바이트=32 시간=3ms TTL=64
+
+192.168.0.28에 대한 Ping 통계:
+    패킷: 보냄 = 4, 받음 = 4, 손실 = 0 (0% 손실),
+왕복 시간(밀리초):
+    최소 = 2ms, 최대 = 3ms, 평균 = 2ms
+PS C:\Users\Administrator>
+```
+
 <img src="rp4-ros-install\rp4-ros-install_003.png"> <br>
 <img src="rp4-ros-install\rp4-ros-install_004.png"> <br>
 <img src="rp4-ros-install\rp4-ros-install_005.png"> <br>
