@@ -1,0 +1,2 @@
+The DYNAMIXEL {% if page.ref=='2xc430-w250' %}**2XC430-W250**{% else %}**2XL430-W250**{% endif %} is a ground breaking DYNAMIXEL featuring **2 integrated movement axes** within a single module. Each axis has it's own dedicated Control Table allowing the {% if page.ref=='2xc430-w250' %}**2XC430-W250**{% else %}**2XL430-W250**{% endif %} to control them as if they were two independent DYNAMIXEL servos.
+{: .notice--success}

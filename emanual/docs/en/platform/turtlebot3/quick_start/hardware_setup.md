@@ -1,0 +1,45 @@
+---
+layout: archive
+lang: en
+ref: hardware_setup
+read_time: true
+share: true
+author_profile: false
+permalink: /docs/en/platform/turtlebot3/hardware_setup/
+sidebar:
+  title: TurtleBot3
+  nav: "turtlebot3"
+product_group: turtlebot3
+page_number: 7
+---
+
+<style>body {counter-reset: h1 3 !important;}</style>
+<div style="counter-reset: h2 3"></div>
+
+<!--[dummy Header 1]>
+  <h1 id="dummy">Quick Start Guide</h1>
+  <h2 id="dummy">Hardware Setup</h2>
+  <p class="dummy_content">TurtleBot3 Assembly Information</p>
+<![end dummy Header 1]-->
+
+## [Hardware Assembly](#hardware-assembly)
+
+![](/assets/images/platform/turtlebot3/hardware_setup/turtlebot3_models.png)
+
+### [Assembly Manual](#assembly-manual)
+
+TurtleBots3 is delivered unassembled. Follow the instructions below to assemble the TurtleBot3.
+
+- `Download PDF` [Assembly manual for TurtleBot3 Burger](http://www.robotis.com/service/download.php?no=748)
+- `Download PDF` [Assembly manual for TurtleBot3 Waffle](http://www.robotis.com/service/download.php?no=749)
+- `Download PDF` [Assembly manual for TurtleBot3 Waffle Pi](http://www.robotis.com/service/download.php?no=750)
+
+### [Assembly Video](#assembly-video)
+
+ROBOTIS also provides the following video assembly instructions.
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/rvm-m2ogrLA" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/1nTMyr4ybi0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/5D9S_tcenL4" frameborder="0" allowfullscreen></iframe>

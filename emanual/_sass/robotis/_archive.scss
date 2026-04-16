@@ -1,0 +1,123 @@
+/* ==========================================================================
+   ARCHIVE
+   ========================================================================== */
+
+.archive {
+  max-width: 1630px;
+  width: auto;
+  position: static;
+  padding: 5px;
+  margin-left: $sidebar_width;
+  // margin-top: 56px;    //space for local_navigation
+  border: 5px solid #f1f1f2;
+}
+
+.splash {
+  width: 100%;
+  flex-direction: row;
+  position: relative;
+  padding: 5px 10px;
+  padding-bottom: 1em;
+  margin-top: 3em;
+}
+
+.page__content {
+  float: flex;
+}
+
+.archive__item-title:before {
+  content: none;
+  padding-bottom: 15px;
+}
+
+.archive__item-excerpt {
+  padding-bottom: 1.5px;
+}
+
+details {
+  display: block;
+  border: dashed;
+  background-color: #eff9ef;
+  padding: 0em;
+  margin: 1em 0em 0em 3em !important;
+
+  + p {
+    border: 1px;
+    margin: 0em 0em 0em 0em !important;
+  }
+
+  > ul, > ol {
+    border: 1px;
+    margin: 0em 0em 0em 2em !important;
+  }
+
+  summary {
+    padding: 1px;
+    border: none;
+    cursor: pointer;
+    list-style: none;
+    p {
+      border: 1px;
+      margin: 0em 0em 0em 1em !important;
+    }
+  }
+  
+  summary:hover {
+    padding: 1px;
+    border: none;
+    background-color: #dcffdc;
+    cursor: pointer;
+    list-style: none;
+  }
+}
+
+// details > summary {
+//   padding: 1px;
+//   border: none;
+//   background-color: #eff9ef;
+//   cursor: pointer;
+//   list-style: none;
+// }
+
+// details > summary:hover {
+//   padding: 1px;
+//   border: none;
+//   background-color: #dcffdc;
+//   cursor: pointer;
+//   list-style: none;
+// }
+
+// details > summary > p {
+//   border: 1px;
+//   margin: 0em 0em 0em 1em !important;
+// }
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+a.Show-me-whole-product {
+  color: inherit;
+}
+
+.Show-me-whole-product:hover {
+  color: #176ac7;
+  // font-weight: bold;
+}
+
+.archive__item-teaser {
+  height: 100%;
+  max-height: 12em;
+  max-width: 100%;
+}
+
+.archive__item-teaser > img {
+  max-width: inherit;
+  max-height: inherit;
+  display: block;
+  margin: 0px auto;
+}
+
+.red {
+  color: red;
+}
