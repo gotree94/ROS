@@ -82,6 +82,12 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 | Autonomous Driving | ✓ | ✓ | ✓ | 차선 인식 등 Jazzy 포팅 완료 |
 | Machine Learning | X | △ | O | ROS 2 전용 ML 패키지 연동 |
 
+📋 기호별 의미 및 상태 설명
+| 기호 | 의미 | 상태 설명 | 
+| :-------:|  :-------:| 
+| $\text{O}$ / $\checkmark$ | 공식 지원 (Full Support) |  제조사(ROBOTIS)의 공식 매뉴얼과 GitHub 소스코드가 완벽히 제공되며, 별도의 코드 수정 없이 즉시 구동 가능한 상태입니다. | 
+| $\triangle$ | 부분 지원 (Partial / Beta) | 기본 기능은 동작하지만 일부 고급 기능이 빠져 있거나, 공식 배포판(Binary)이 아닌 소스 코드를 직접 빌드하여 사용해야 하는 '베타' 상태를 의미합니다.| 
+| $\text{X}$ |  지원 불가 (Not Supported) | 해당 환경에서 구동하기 위한 패키지가 개발되지 않았거나, 의존성 문제로 인해 설치 및 실행이 불가능한 상태입니다.| 
 
 💡 주요 변경 사항 및 설치 가이드
 1. ROS 2 Jazzy Jalisco (Ubuntu 24.04)
