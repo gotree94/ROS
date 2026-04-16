@@ -67,3 +67,38 @@ https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 <img src="rp4-ros-install\rp4-ros-install_005.png"> <br>
 <img src="rp4-ros-install\rp4-ros-install_006.png"> <br>
 
+------
+
+🐢 터틀봇3 주요 기능 호환성 테이블 (2026 업데이트)
+
+| 기능 (Features) | Noetic (ROS 1) | Humble (LTS) | Jazzy (Latest) | 비고  | 
+|:---------:|:---------:|:---------:|:---------:|:---------:|
+| Teleop (원격 조종) | ✓ | ✓ | ✓ | 기본 패키지 포함 |
+| SLAM (지도 작성) | ✓ | ✓ | ✓ | Toolbox/Cartographer 지원 |
+| Navigation (주행) | ✓ (Nav1) | ✓ (Nav2) | ✓ (Nav2) | Jazzy는 최신 Nav2 최적화 포함 |
+| Simulation (Gazebo) | ✓ (Classic) | ✓ (Classic/Sim) | ✓ (Gz Sim) | Jazzy는 신규 Gazebo 호환 |
+| Manipulation | ✓ | ✓ | O | 지원 시작 (2025 Q4~) |
+| Home Service Challenge | ✓ | △ | X | Noetic 특화 콘텐츠 (Humble은 커스텀 필요) |
+| Autonomous Driving | ✓ | ✓ | ✓ | 차선 인식 등 Jazzy 포팅 완료 |
+| Machine Learning | X | △ | O | ROS 2 전용 ML 패키지 연동 |
+
+
+💡 주요 변경 사항 및 설치 가이드
+1. ROS 2 Jazzy Jalisco (Ubuntu 24.04)
+•	현재 상황: 2026년 기준, 터틀봇3의 가장 표준이 되는 최신 버전입니다.
+•	특징: 이미지 속 "Soon" 단계에서 벗어나 **Manipulation(매니퓰레이션)**과 Machine Learning(기계 학습) 예제들이 공식 지원됩니다. 특히 Docker 컨테이너를 통한 배포가 안정화되어 라즈베리 파이 5에서도 원활하게 구동됩니다.
+2. ROS 2 Humble Hawksbill (Ubuntu 22.04)
+•	현재 상황: 가장 견고한 LTS(Long Term Support) 버전입니다.
+•	특징: 기업이나 연구실에서 '절대 안 죽는 환경'을 원할 때 여전히 1순위로 선택됩니다. 대부분의 시뮬레이션 환경이 이 버전에 최적화되어 있습니다.
+3. ROS 1 Noetic (지원 종료 알림)
+•	주의: 2025년 5월부로 공식 지원이 종료되었습니다. Home Service Challenge와 같은 과거의 특정 대회용 소스코드가 꼭 필요한 경우가 아니라면, 신규 설치 시에는 고려하지 않는 것이 좋습니다.
+🛠️ 추천 환경 (Best Practice)
+만약 지금 라즈베리 파이에 새로 설치하신다면 아래 조합을 강력 추천합니다.
+•	하드웨어: Raspberry Pi 4 (4GB/8GB) 또는 Raspberry Pi 5
+•	OS: Ubuntu 24.04 LTS (64-bit)
+•	ROS 버전: ROS 2 Jazzy (Docker 활용 시 호환성 문제 해결이 가장 쉬움)
+
+----
+
+
+
