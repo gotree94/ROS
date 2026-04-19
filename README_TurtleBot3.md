@@ -136,41 +136,272 @@ PS C:\Users\Administrator>
 
 ----
 
-## XRDP (전체 데스크탑 — 권장)
+# 🖥️ Raspberry Pi 4 — Ubuntu 22.04 LTS Server + XRDP + XFCE4 GUI 환경 구성
 
-### 📌 라즈베리파이 측 설정
+Windows PC의 **MobaXterm**에서 **RDP**로 라즈베리파이 4의 **XFCE4 데스크탑**에 접속하는 완성 가이드입니다.
+
+---
+
+## 📋 전체 흐름
+
+```
+Ubuntu 22.04 Server 이미지 굽기
+        ↓
+초기 부팅 & SSH 접속
+        ↓
+시스템 업데이트
+        ↓
+XFCE4 데스크탑 설치
+        ↓
+XRDP 설치 & 설정
+        ↓
+MobaXterm RDP 접속
+        ↓
+✅ GUI 데스크탑 완성
+```
+
+---
+
+## 🛠️ 개발 환경
+
+| 항목 | 내용 |
+|------|------|
+| 하드웨어 | Raspberry Pi 4 |
+| OS | Ubuntu 22.04 LTS Server (64-bit) |
+| 데스크탑 환경 | XFCE4 |
+| 원격 접속 서버 | XRDP (Port 3389) |
+| 클라이언트 도구 | MobaXterm (Windows) |
+
+---
+
+## STEP 1. Ubuntu 22.04 LTS Server 이미지 설치
+
+### 필요 도구
+
+- **Raspberry Pi Imager** : https://www.raspberrypi.com/software/
+- MicroSD 카드 (32GB 이상 권장)
+
+### OS 선택
+
+```
+Other general-purpose OS → Ubuntu → Ubuntu Server 22.04 LTS (64-bit)
+```
+
+### ⚙️ 고급 설정 (톱니바퀴 아이콘)
+
+이미지 굽기 전에 반드시 설정합니다.
+
+```
+☑ Set hostname:          rpi4
+☑ Enable SSH:            Use password authentication
+☑ Set username/password: [계정명] / [비밀번호]
+☑ Configure wireless LAN: (Wi-Fi 사용 시 SSID/PW 입력)
+☑ Set locale:            Asia/Seoul / ko_KR
+```
+
+> 이 설정을 완료하면 첫 부팅부터 바로 SSH 접속이 가능합니다.
+
+---
+
+## STEP 2. 라즈베리파이 부팅 & SSH 접속
+
+### IP 주소 확인
+
+공유기 관리 페이지에서 확인하거나, 모니터 직접 연결 후 아래 명령 실행:
 
 ```bash
-# 데스크탑 환경 설치 (가벼운 XFCE 권장)
-sudo apt update
-sudo apt install -y xfce4 xfce4-goodies
+hostname -I
+# 또는
+ip addr show | grep "inet "
+```
 
+### MobaXterm SSH 접속
+
+```
+Session → SSH
+  Remote host : 192.168.x.x   ← 라즈베리파이 IP
+  Username    : [계정명]
+  Port        : 22
+```
+
+접속 후 비밀번호 입력 → 터미널 진입 완료
+
+---
+
+## STEP 3. 시스템 초기 설정
+
+```bash
+# 시스템 업데이트
+sudo apt update && sudo apt full-upgrade -y
+
+# 한국어 로케일 설정 (선택)
+sudo locale-gen ko_KR.UTF-8
+sudo update-locale LANG=ko_KR.UTF-8
+
+# 타임존 설정
+sudo timedatectl set-timezone Asia/Seoul
+timedatectl status        # 확인
+
+# 재부팅
+sudo reboot
+```
+
+> 재부팅 후 다시 SSH로 접속합니다.
+
+---
+
+## STEP 4. XFCE4 데스크탑 환경 설치
+
+```bash
+# XFCE4 설치 (경량 데스크탑 환경)
+sudo apt install -y xfce4 xfce4-goodies
+```
+
+> 설치 중 **display manager 선택 팝업**이 나타나면 `lightdm` 을 선택합니다.
+
+- `xfce4-goodies` : 파일 매니저, 텍스트 에디터 등 유틸리티 포함
+
+---
+
+## STEP 5. XRDP 설치 및 설정
+
+```bash
 # XRDP 설치
 sudo apt install -y xrdp
 
-# xrdp 사용자를 ssl-cert 그룹에 추가
+# xrdp 계정을 ssl-cert 그룹에 추가 (보안 오류 방지)
 sudo adduser xrdp ssl-cert
 
-# XFCE를 기본 세션으로 설정
-echo "startxfce4" | sudo tee /etc/xrdp/startwm.sh > /dev/null
-
-# 또는 사용자 홈에 설정
+# XFCE4를 기본 세션으로 지정 ← 핵심 설정
 echo "xfce4-session" > ~/.xsession
 chmod +x ~/.xsession
 
-# XRDP 시작 및 자동시작 등록
+# XRDP 서비스 자동시작 등록 및 시작
 sudo systemctl enable xrdp
 sudo systemctl start xrdp
 
-# 방화벽 허용 (ufw 사용 시)
-sudo ufw allow 3389/tcp
+# 상태 확인
+sudo systemctl status xrdp
 ```
 
-### 📌 MobaXterm 접속 방법
+정상 실행 시 출력:
 
-1. MobaXterm → Session → RDP
-2. Remote host: 라즈베리파이 IP
-3. Username: 우분투 계정명
-4. Port: 3389
-5. OK → 비밀번호 입력
+```
+● xrdp.service - xrdp daemon
+   Active: active (running)
+```
+
+```bash
+# 방화벽 설정 (ufw 활성화된 경우)
+sudo ufw allow 3389/tcp
+sudo ufw status
+```
+
+---
+
+## STEP 6. Polkit 색상 인증 경고 제거 (권장)
+
+접속 시 **색상 관리 인증 팝업 오류**가 반복되는 현상을 방지합니다.
+
+```bash
+sudo nano /etc/polkit-1/localauthority/50-local.d/xrdp-color.pkla
+```
+
+아래 내용을 붙여넣기합니다:
+
+```ini
+[Allow Colord for XRDP]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+ResultAny=no
+ResultInactive=no
+ResultActive=yes
+```
+
+```bash
+# 저장: Ctrl+O → Enter → Ctrl+X
+sudo systemctl restart xrdp
+```
+
+---
+
+## STEP 7. MobaXterm RDP 접속
+
+### 접속 설정
+
+```
+MobaXterm 실행
+  → Session 클릭
+  → RDP 탭 선택
+  → Remote host : 192.168.x.x   ← 라즈베리파이 IP
+  → Username    : [계정명]
+  → Port        : 3389
+  → OK → 비밀번호 입력
+```
+
+### 접속 성공 시 화면 순서
+
+```
+XRDP 로그인 화면 (파란 로고)
+        ↓
+username / password 입력
+        ↓
+XFCE4 데스크탑 로딩
+        ↓
+✅ GUI 데스크탑 완성
+```
+
+---
+
+## STEP 8. 시스템 업데이트 완료
+
+첫 접속 시 **Update Notifier 팝업**이 표시됩니다.  
+터미널에서 직접 처리하는 것을 권장합니다:
+
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo reboot
+```
+
+재부팅 후 RDP로 다시 접속하면 **최종 완성 상태**입니다.
+
+---
+
+## 🔧 트러블슈팅
+
+| 증상 | 원인 | 해결 방법 |
+|------|------|-----------|
+| 접속 후 회색 빈 화면 | `~/.xsession` 파일 없음 | `echo "xfce4-session" > ~/.xsession` 실행 |
+| 포트 연결 거부 | xrdp 서비스 미실행 | `sudo systemctl start xrdp` |
+| 로그인 후 바로 끊김 | 기존 SSH 세션 충돌 | SSH에서 먼저 로그아웃 후 RDP 접속 |
+| 화면 깨짐 / 해상도 이상 | 해상도 불일치 | MobaXterm RDP 설정에서 해상도 수동 조정 |
+| 색상 인증 팝업 반복 | polkit 설정 없음 | STEP 6 의 pkla 파일 생성 |
+
+---
+
+## 📊 최종 구성 요약
+
+```
+┌─────────────────────────────────────┐
+│      Windows PC (MobaXterm)         │
+│      RDP Client  →  Port 3389       │
+└──────────────┬──────────────────────┘
+               │ RDP Protocol
+               ▼
+┌─────────────────────────────────────┐
+│       Raspberry Pi 4                │
+│       Ubuntu 22.04 LTS Server       │
+│       ├── XRDP  (Port 3389)         │
+│       ├── XFCE4 Desktop             │
+│       └── ~/.xsession               │
+└─────────────────────────────────────┘
+```
+
+---
+
+## 📝 참고
+
+- `~/.xsession` 파일의 `xfce4-session` 한 줄이 데스크탑 환경을 결정하는 **핵심 설정**입니다.
+- XFCE4는 라즈베리파이 4에서 쾌적하게 동작하는 **경량 데스크탑 환경**입니다.
+- XRDP는 Windows의 기본 원격 데스크탑(mstsc.exe)으로도 접속할 수 있습니다.
 
