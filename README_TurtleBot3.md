@@ -136,5 +136,41 @@ PS C:\Users\Administrator>
 
 ----
 
+## XRDP (전체 데스크탑 — 권장)
 
+### 📌 라즈베리파이 측 설정
+
+```bash
+# 데스크탑 환경 설치 (가벼운 XFCE 권장)
+sudo apt update
+sudo apt install -y xfce4 xfce4-goodies
+
+# XRDP 설치
+sudo apt install -y xrdp
+
+# xrdp 사용자를 ssl-cert 그룹에 추가
+sudo adduser xrdp ssl-cert
+
+# XFCE를 기본 세션으로 설정
+echo "startxfce4" | sudo tee /etc/xrdp/startwm.sh > /dev/null
+
+# 또는 사용자 홈에 설정
+echo "xfce4-session" > ~/.xsession
+chmod +x ~/.xsession
+
+# XRDP 시작 및 자동시작 등록
+sudo systemctl enable xrdp
+sudo systemctl start xrdp
+
+# 방화벽 허용 (ufw 사용 시)
+sudo ufw allow 3389/tcp
+```
+
+### 📌 MobaXterm 접속 방법
+
+1. MobaXterm → Session → RDP
+2. Remote host: 라즈베리파이 IP
+3. Username: 우분투 계정명
+4. Port: 3389
+5. OK → 비밀번호 입력
 
