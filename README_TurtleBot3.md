@@ -396,8 +396,10 @@ sudo reboot
 │       └── ~/.xsession               │
 └─────────────────────────────────────┘
 ```
+
+<img src="006.png"> <br><br>
+
 <img src="005.png"> <br>
-<img src="006.png"> <br>
 
 ---
 
