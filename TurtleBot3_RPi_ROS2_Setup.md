@@ -5,6 +5,8 @@
 Docker + Wayland + GPU 가속 + 센서(LiDAR/Camera/OpenCR)까지 포함된
 **실전 구성**입니다.
 
+rp4ros-nwk2
+
 ------------------------------------------------------------------------
 
 ## 📦 0. Raspberry Pi OS (64-bit) 설치
