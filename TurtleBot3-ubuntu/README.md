@@ -80,11 +80,11 @@ Ping rp4ros-nwk.local [192.168.0.28] 32바이트 데이터 사용:
 PS C:\Users\Administrator>
 ```
 
-<img src="rp4-ros-install\rp4-ros-install_003.png"> <br>
-<img src="rp4-ros-install\rp4-ros-install_004.png"> <br>
-<img src="rp4-ros-install\rp4-ros-install_005.png"> <br>
-<img src="rp4-ros-install\rp4-ros-install_006.png"> <br>
-<img src="rp4-ros-install\rp4-ros-install_007.png"> <br>
+<img src=".\rp4-ros-install\rp4-ros-install_003.png"> <br>
+<img src=".\rp4-ros-install\rp4-ros-install_004.png"> <br>
+<img src=".\rp4-ros-install\rp4-ros-install_005.png"> <br>
+<img src=".\rp4-ros-install\rp4-ros-install_006.png"> <br>
+<img src=".\rp4-ros-install\rp4-ros-install_007.png"> <br>
 
 ------
 
